@@ -1,0 +1,22 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Сборка
+/out/
+target/
+build/
+
+# Java кеши
+*.class
+*.jar
+
+# Файл с токеном (обязательно!)
+config.properties
+
+# Логи
+*.log
+
+# Кэш от ОС
+.DS_Store
+Thumbs.db
