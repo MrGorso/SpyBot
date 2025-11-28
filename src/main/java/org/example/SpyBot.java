@@ -17,10 +17,10 @@ import java.util.*;
 
 public class SpyBot extends TelegramLongPollingBot {
 
-    private final long ownerId = 1032570871L; // Замени на свой Telegram user ID
+    private final long ownerId = 1032570871L; 
     private final File groupsFile = new File("groups.txt");
 
-    // Где-нибудь в классе бота (глобально)
+
     private final Set<Long> invitedUsers = new HashSet<>();
 
     @Override
@@ -36,7 +36,7 @@ public class SpyBot extends TelegramLongPollingBot {
             return props.getProperty("bot.token");
         } catch (IOException e) {
             e.printStackTrace();
-            return null; // или кидай ошибку, если хочешь
+            return null; 
         }
     }
 
@@ -86,7 +86,7 @@ public class SpyBot extends TelegramLongPollingBot {
             }
 
 
-            // Команда от владельца в ЛС: /alert сообщение
+        
             if (chat.isUserChat() && msg.getFrom().getId() == ownerId) {
                 String text = msg.getText();
 
@@ -111,7 +111,7 @@ public class SpyBot extends TelegramLongPollingBot {
                             sendMessage(ownerId, "❌ Укажи сообщение после Group ID.");
                         }
                     } else {
-                        // Старый способ — всем группам
+                        
                         sendToAllGroups(args);
                         sendMessage(ownerId, "📨 Сообщение разослано по группам!");
                     }
