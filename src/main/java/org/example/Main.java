@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class Main {
     public static void main(String[] args) {
         try {
-            // Создаём Telegram API и регистрируем твоего бота
+        
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new SpyBot());
 
